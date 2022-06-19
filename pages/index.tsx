@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Feed from '../components/Feed';
 import SideBar from '../components/SideBar';
+import Widgets from '../components/Widgets';
 
 const Home: NextPage = () => {
 	return (
@@ -19,6 +20,8 @@ const Home: NextPage = () => {
 				{/* feed */}
 				<Feed />
 				{/* widgets */}
+
+				<Widgets />
 			</main>
 		</div>
 	);
