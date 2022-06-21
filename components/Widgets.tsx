@@ -1,5 +1,6 @@
 import { SearchIcon } from '@heroicons/react/outline';
 import React from 'react';
+import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 function Widgets() {
 	return (
@@ -13,6 +14,11 @@ function Widgets() {
 					className='bg-transparent flex-1 outline-none'
 				/>
 			</div>
+			<TwitterTimelineEmbed
+				sourceType='profile'
+				screenName='sonnysangha'
+				options={{ height: 1000 }}
+			/>
 		</div>
 	);
 }
