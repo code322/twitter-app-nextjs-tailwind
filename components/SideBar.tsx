@@ -12,8 +12,8 @@ import {
 import SideBarRow from './SideBarRow';
 function SideBar() {
 	return (
-		<div className='flex flex-col col-span-2'>
-			<img className='h-10 w-10' src='https://links.papareact.com/drg' alt='' />
+		<div className='flex flex-col col-span-2 items-center px-4 md:items-start'>
+			<img className='m-3 h-10 w-10' src='https://links.papareact.com/drg' alt='' />
 			<SideBarRow Icon={HomeIcon} title='home' />
 			<SideBarRow Icon={HashtagIcon} title='Explore' />
 			<SideBarRow Icon={BellIcon} title='Notification' />
