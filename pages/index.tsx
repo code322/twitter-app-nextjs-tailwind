@@ -11,7 +11,7 @@ const Home: NextPage = () => {
 			<Head>
 				<title>Twitter</title>
 			</Head>
-			<main className=''>
+			<main className='grid grid-cols-9'>
 				{/* sidebar */}
 				<SideBar />
 
