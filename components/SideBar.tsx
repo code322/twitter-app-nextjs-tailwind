@@ -27,7 +27,7 @@ function SideBar() {
 			<SideBarRow Icon={UserIcon} title='Sign In' />
 			<SideBarRow Icon={DotsCircleHorizontalIcon} title='More' />
 			<SideBarRow Icon={DotsCircleHorizontalIcon} title='More' />
-			<SideBarRow Icon={DotsCircleHorizontalIcon} title='More' />
+	
 		</div>
 	);
 }
