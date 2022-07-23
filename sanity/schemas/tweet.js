@@ -1,5 +1,5 @@
 export default {
-	name: 'Tweet',
+	name: 'tweet',
 	title: 'Tweet',
 	type: 'document',
 	fields: [
