@@ -1,6 +1,12 @@
 import React from 'react';
 import { Tweet } from '../typings';
 import TimeAgo from 'react-timeago';
+import {
+	ChatAlt2Icon,
+	HeartIcon,
+	SwitchHorizontalIcon,
+	UploadIcon,
+} from '@heroicons/react/outline';
 interface Props {
 	tweet: Tweet;
 }
@@ -34,6 +40,21 @@ const Tweets = ({ tweet }: Props) => {
 							alt=''
 						/>
 					)}
+				</div>
+			</div>
+			<div className='flex justify-between mt-5'>
+				<div className='flex cursor-pointer items-center space-x-3 text-gray-400'>
+					<ChatAlt2Icon className='h-5 w-5' />
+					<p>5</p>
+				</div>
+				<div className='flex cursor-pointer items-center space-x-3 text-gray-400'>
+					<SwitchHorizontalIcon className='h-5 w-5' />
+				</div>
+				<div className='flex cursor-pointer items-center space-x-3 text-gray-400'>
+					<HeartIcon className='h-5 w-5' />
+				</div>
+				<div className='flex cursor-pointer items-center space-x-3 text-gray-400'>
+					<UploadIcon className='h-5 w-5' />
 				</div>
 			</div>
 		</div>
