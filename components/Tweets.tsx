@@ -6,16 +6,34 @@ interface Props {
 }
 
 const Tweets = ({ tweet }: Props) => {
+	console.log(tweet.profileImg);
 	return (
-		<div>
-			<div>
-				<img src={tweet.profileImage} alt='' />
+		<div className='flex flex-col space-x-3 border-y p-5 border-gray-100'>
+			<div className='flex space-x-3'>
+				<img
+					className='h-10 w-10 rounded-full '
+					src={tweet.profileImg}
+					alt='profile'
+				/>
 				<div>
-					<p>{tweet.username}</p>
-					<p className='hidden text-sm text-gray-500'>
-						@{tweet.username.replace(/\s+/g, '').toLocaleLowerCase()}
-					</p>
-					<TimeAgo className='text-sm text-gray-500' date={tweet._createdAt} />
+					<div className='flex items-center space-x-1'>
+						<p className='mr-1 font-bold'>{tweet.username}</p>
+						<p className=' text-sm text-gray-500'>
+							@{tweet.username.replace(/\s+/g, '').toLocaleLowerCase()}
+						</p>
+						<TimeAgo
+							className='text-sm text-gray-500'
+							date={tweet._createdAt}
+						/>
+					</div>
+					<p className='pt-1'>{tweet.text}</p>
+					{tweet.image && (
+						<img
+							className='m-5 ml-0 max-h-60 rounded-lg object-cover shadow-sm'
+							src={tweet.image}
+							alt=''
+						/>
+					)}
 				</div>
 			</div>
 		</div>
