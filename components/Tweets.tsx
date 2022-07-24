@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import React from 'react';
 import { Tweet } from '../typings';
 import TimeAgo from 'react-timeago';
@@ -7,12 +8,24 @@ import {
 	SwitchHorizontalIcon,
 	UploadIcon,
 } from '@heroicons/react/outline';
+import { fetchComments } from '../utils/fetchComments';
+import { Comment } from '../typings';
 interface Props {
 	tweet: Tweet;
 }
 
 const Tweets = ({ tweet }: Props) => {
-	console.log(tweet.profileImg);
+	const [comments, setComments] = useState<Comment[]>([]);
+
+	const refreshComments = async () => {
+		const comment: Comment[] = await fetchComments(tweet._id);
+		setComments(comment);
+	};
+
+	useEffect(() => {
+		refreshComments();
+	}, []);
+
 	return (
 		<div className='flex flex-col space-x-3 border-y p-5 border-gray-100'>
 			<div className='flex space-x-3'>
