@@ -58,7 +58,7 @@ const Tweets = ({ tweet }: Props) => {
 			<div className='flex justify-between mt-5'>
 				<div className='flex cursor-pointer items-center space-x-3 text-gray-400'>
 					<ChatAlt2Icon className='h-5 w-5' />
-					<p>5</p>
+					<p>{comments.length}</p>
 				</div>
 				<div className='flex cursor-pointer items-center space-x-3 text-gray-400'>
 					<SwitchHorizontalIcon className='h-5 w-5' />
@@ -70,6 +70,35 @@ const Tweets = ({ tweet }: Props) => {
 					<UploadIcon className='h-5 w-5' />
 				</div>
 			</div>
+			{comments?.length > 0 && (
+				<div className=' my-2 mt-5 max-h-44 space-y-5 overflow-y-scroll border-t border-gray-100 p-5'>
+					{comments.map((posts) => {
+						return (
+							<div className='flex space-x-2 relative' key={posts._id}>
+								<hr className='absolute h-8 left-5 top-10 border-x border-gray-200' />
+								<img
+									src={posts.profileImg}
+									alt=''
+									className='mt-2 h-7 w-7 rounded-full object-cover '
+								/>
+								<div>
+									<div className='flex items-center space-x-1'>
+										<p className='mr-1 font-bold'>{posts.username}</p>
+										<p className='hidden text-sm text-gray-500 lg:inline'>
+											@{posts.username.replace(/\s+/g, '').toLowerCase()}
+										</p>
+										<TimeAgo
+											className='text-sm text-gray-500'
+											date={posts._createdAt}
+										/>
+									</div>
+									<p>{posts.comment}</p>
+								</div>
+							</div>
+						);
+					})}
+				</div>
+			)}
 		</div>
 	);
 };
