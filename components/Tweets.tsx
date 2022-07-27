@@ -16,7 +16,6 @@ interface Props {
 
 const Tweets = ({ tweet }: Props) => {
 	const [comments, setComments] = useState<Comment[]>([]);
-
 	const refreshComments = async () => {
 		const comment: Comment[] = await fetchComments(tweet._id);
 		setComments(comment);
